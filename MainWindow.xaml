@@ -1,0 +1,126 @@
+﻿<Window
+    x:Class="Binary.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Binary"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="600"
+    Height="300"
+    mc:Ignorable="d"
+    Title="Один Байт">
+    <Viewbox Stretch="Fill">
+        <Grid Background="Coral">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition />
+                <RowDefinition Height="0.6*" />
+            </Grid.RowDefinitions>
+            <Label
+                Grid.Row="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Stretch"
+                FontSize="18"
+                FontWeight="Bold">
+                Это представление двоичной системы счисления к десятичной
+            </Label>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="0.3*" />
+                </Grid.ColumnDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Label}">
+                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <Setter Property="Foreground" Value="#FF123DED" />
+
+                    </Style>
+                </Grid.Resources>
+                <Label
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    Content="0"
+                    Name="LabelNamber" />
+                <Label Grid.Column="0">Соответствует цифре</Label>
+
+            </Grid>
+
+
+
+            <Grid Grid.Row="2" Cursor="Hand">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Content" Value="0" />
+                        <Setter Property="FontSize" Value="60" />
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" />
+                                    <GradientStop Offset="1" Color="Coral" />
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Foreground" Value="Black" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <Setter Property="VerticalAlignment" Value="Stretch" />
+                        <Setter Property="HorizontalAlignment" Value="Stretch" />
+                        <EventSetter Event="ButtonBase.Click" Handler="Button_Click" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Tag="128" />
+                <Button Grid.Column="1" Tag="64" />
+                <Button Grid.Column="2" Tag="32" />
+                <Button Grid.Column="3" Tag="16" />
+                <Button Grid.Column="4" Tag="8" />
+                <Button Grid.Column="5" Tag="4" />
+                <Button Grid.Column="6" Tag="2" />
+                <Button Grid.Column="7" Tag="1" />
+            </Grid>
+
+            <Grid Grid.Row="3" Cursor="Hand">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Label}">
+                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <Setter Property="Foreground" Value="Green" />
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <Setter Property="HorizontalAlignment" Value="Center" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="128" />
+                <Label Grid.Column="1" Content="64" />
+                <Label Grid.Column="2" Content="32" />
+                <Label Grid.Column="3" Content="16" />
+                <Label Grid.Column="4" Content="8" />
+                <Label Grid.Column="5" Content="4" />
+                <Label Grid.Column="6" Content="2" />
+                <Label Grid.Column="7" Content="1" />
+            </Grid>
+
+        </Grid>
+    </Viewbox>
+</Window>
